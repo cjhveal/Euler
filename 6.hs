@@ -1,4 +1,10 @@
-sum_of_squares = sum [x*x | x <- [1..100]]
-square_of_sum = (sum [1..100]) * (sum [1..100])
+-- Calculates the diference between the the square of the sum of the list
+-- and the sum of the squares of the list. 
+diffSquares :: [Int] -> Int
+diffSquares [] = 0
+diffSquares xs = squareOfSums - sumOfSquares
+  where
+    squareOfSums = (sum xs)^2
+    sumOfSquares = sum $ map (\x -> x^2) xs
 
-answer = square_of_sum - sum_of_squares
+answer = diffSquares [1..100]
