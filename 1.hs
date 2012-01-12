@@ -1,4 +1,5 @@
--- Multiples of xs
+-- multiples: takes two lists, and returns the elements of the first list
+-- which are divisble by an element in the second list.
 multiples :: [Int] -> [Int] -> [Int]
 multiples [] _ = []
 multiples _ [] = []
