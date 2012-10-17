@@ -1,8 +1,5 @@
--- multiples: takes two lists, and returns the elements of the first list
--- which are divisble by an element in the second list.
-multiples :: [Int] -> [Int] -> [Int]
-multiples [] _ = []
-multiples _ [] = []
-multiples xs ys = filter (\x -> any (\y-> ( x `mod` y == 0)) ys) xs
+divides :: Int -> Int -> Bool
+divides x y = (==0) $ mod y x
 
-answer = sum $ multiples [1..999] [3,5]
+answer :: Int
+answer = sum [x | x <- [1..999], 3 `divides` x || 5 `divides` x]
