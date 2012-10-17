@@ -5,6 +5,7 @@ diffSquares [] = 0
 diffSquares xs = squareOfSums - sumOfSquares
   where
     squareOfSums = (sum xs)^2
-    sumOfSquares = sum $ map (flip (^) 2) xs
+    sumOfSquares = sum $ map (^2) xs
 
+answer :: Int
 answer = diffSquares [1..100]
